@@ -8,6 +8,9 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+
+// https://leetcode.com/problems/merge-two-sorted-lists/description/
+
 class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(0);
