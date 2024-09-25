@@ -6,7 +6,7 @@ public class QueueLinkedList {
         queue.add(2);
         queue.add(3);
         queue.add(4);
-
+        //removes first element from queue
         queue.remove();
 
         for (Integer i : queue) {
