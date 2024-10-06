@@ -26,4 +26,14 @@ class Solution {
         }
         return prev;
     }
+
+    public ListNode reverseListRecursive(ListNode head) {
+        
+        if(head == null || head.next == null) return head;
+        
+        ListNode temp = reverseListRecursive(head.next);
+        temp.next.next = head;
+        temp.next = null;
+        return temp;
+    }
 }
