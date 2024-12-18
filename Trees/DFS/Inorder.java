@@ -1,7 +1,6 @@
 package DFS;
 
-public class Postorder {
-
+public class Inorder {
   public class TreeNode {
     int val;
     TreeNode left;
@@ -21,20 +20,21 @@ public class Postorder {
     }
   }
 
-  // POSTORDER: LEFT SUBTREE -> RIGHT SUBTREE -> ROOT
-  public void Postorder(TreeNode root) {
+  // INORDER: LEFT SUBTREE -> ROOT -> RIGHT SUBTREE
+  public void Inorder(TreeNode root) {
+
     // this will hit if when we arrive on the left pointer or the right pointer that
     if (root == null) {
       return;
     }
 
     // Left side of the tree
-    Postorder(root.left);
-    // Right side of tree
-    Postorder(root.right);
+    Inorder(root.left);
     // Print root
     System.out.println(root.val);
+    // Right side of tree
+    Inorder(root.right);
   }
 }
 
-// OUTPUT: [2,3,5,7,6,4]
+// OUTPUT: [2,3,4,5,6,7]
