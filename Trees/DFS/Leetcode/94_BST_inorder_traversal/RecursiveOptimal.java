@@ -1,10 +1,9 @@
-package DFS.Leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class Iterative {
+public class RecursiveOptimal {
   public class TreeNode {
     int val;
     TreeNode left;
