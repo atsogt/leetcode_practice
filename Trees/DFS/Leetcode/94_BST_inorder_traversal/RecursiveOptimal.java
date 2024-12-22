@@ -23,26 +23,8 @@ public class RecursiveOptimal {
     }
   }
 
-  public List<Integer> inorderTraversal(TreeNode root) {
+  public List<Integer> RecursiveOptimal(TreeNode root) {
     // Inorder: left node -> parent node -> right node
-    ArrayList<Integer> arr = new ArrayList<>();
-    Stack<TreeNode> stack = new Stack<>();
-    TreeNode curr = root;
-
-    while (curr != null || !stack.isEmpty()) {
-      // imitading the recursive call stack
-      while (curr != null) {
-        // each time we traverse down left, the node gets added to stack
-        stack.push(curr);
-        curr = curr.left;
-      }
-      // pop it off from the stack
-      curr = stack.pop();
-      // remember to add value, not node
-      arr.add(curr.val);
-      // go to the right
-      curr = curr.right;
-    }
-    return arr;
+    return null;
   }
 }
