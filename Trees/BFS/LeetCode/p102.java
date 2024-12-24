@@ -19,7 +19,7 @@ Output: [[1]]
 Input: root = []
 Output: []
 */
-public class prob102 {
+public class p102 {
   public List<List<Integer>> levelOrder(TreeNode root) {
     List<List<Integer>> res = new ArrayList<>();
     // each node gets added, then popped off, then children added (if they exist)
