@@ -9,21 +9,30 @@ public class p199Correct {
   public List<Integer> rightSideView(TreeNode root) {
     List<Integer> res = new ArrayList<>();
     Queue<TreeNode> q = new LinkedList<>();
-    q.offer(root);
+    q.offer(root); // if null gets added, line 20 and 26 would not hit
 
     while (!q.isEmpty()) {
+      // empty null
       TreeNode rightSide = null;
+      // size needs to be declared because it will change size as child node gets
+      // added (if child exists)
       int qLen = q.size();
 
       for (int i = 0; i < qLen; i++) {
+        // removal from queue
         TreeNode node = q.poll();
         if (node != null) {
+          // right side captured
           rightSide = node;
+          // child added to queue
           q.offer(node.left);
           q.offer(node.right);
         }
       }
+      // outside of the for loop, because rightside will always get the right child
+      // element in each level
       if (rightSide != null) {
+        // added to array
         res.add(rightSide.val);
       }
     }
