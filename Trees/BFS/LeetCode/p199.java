@@ -24,6 +24,9 @@ public class p199 {
           q.add(curr.right);
         arr.add(curr.val);
       }
+      // adding last element of arr to res because it is the right side of the tree
+      // and if right nodes don't exist, the left is visible
+
       res.add(arr.get(arr.size() - 1));
 
     }
