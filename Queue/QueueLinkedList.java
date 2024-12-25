@@ -1,3 +1,7 @@
+
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class QueueLinkedList {
     public static void main(String[] args) {
         Queue<Integer> queue = new LinkedList<>();
@@ -6,7 +10,7 @@ public class QueueLinkedList {
         queue.add(2);
         queue.add(3);
         queue.add(4);
-        //removes first element from queue
+        // removes first element from queue
         queue.remove();
 
         for (Integer i : queue) {
