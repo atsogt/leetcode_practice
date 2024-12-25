@@ -1,4 +1,4 @@
-package LeetCode;
+package LeetCode.p1700;
 
 public class p1700 {
   public int countStudents(int[] students, int[] sandwiches) {
