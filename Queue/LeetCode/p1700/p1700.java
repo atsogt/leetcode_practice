@@ -2,11 +2,12 @@ package LeetCode.p1700;
 
 public class p1700 {
   public int countStudents(int[] students, int[] sandwiches) {
+    // array with two elements keeping count of students base on 0's and 1's
     int[] a = { 0, 0 };
-
+    // this iteration is similar to bucket sorting
     for (int i = 0; i < students.length; i++) {
-      // students = [1,1,0,0]
-      // students = [1,1,1,0,0,1]
+      // ex input:students = [1,1,0,0]
+      // ex2 input:students = [1,1,1,0,0,1]
       a[students[i]]++;
     }
 
