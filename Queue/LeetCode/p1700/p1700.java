@@ -12,7 +12,7 @@ public class p1700 {
     }
 
     int k = 0;
-    // sandwiches = [0,1,0,1]
+    // sandwiches = [0,1,0,1] [1,3]
     // sandwiches = [1,0,0,0,1,1]
     while (k < sandwiches.length) {
       if (a[sandwiches[k]] > 0) {
