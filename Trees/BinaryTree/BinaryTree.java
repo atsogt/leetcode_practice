@@ -34,7 +34,7 @@ public class BinaryTree {
 
       TreeNode current = root;
       while (true) {
-        // traversal of node
+        // traversal of no
         if (key < current.key) {
           if (current.left == null) {
             current.left = newNode;
