@@ -3,18 +3,23 @@
 
 public class prob1 {
   public boolean canReachLeaf(TreeNode root) {
+    // checking if root is null or root is NOT 0
     if (root == null || root.val == 0) {
       return false;
     }
-    if (root.right == null && root.left == null) {
+    // Does root have children, if NOT return true
+    if (root.left == null && root.right == null) {
       return true;
     }
+    // Traversing left subtree of root (recursivesly)
     if (canReachLeaf(root.left)) {
       return true;
     }
+    // Then traversing right subtree (recursivesly)
     if (canReachLeaf(root.right)) {
       return true;
     }
+    // Base Case
     return false;
   }
 }
