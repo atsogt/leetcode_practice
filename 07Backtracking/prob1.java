@@ -7,7 +7,7 @@ public class prob1 {
     if (root == null || root.val == 0) {
       return false;
     }
-    // Does root have children, if NOT return true
+    // is this a leaf node? if yes, return true
     if (root.left == null && root.right == null) {
       return true;
     }
