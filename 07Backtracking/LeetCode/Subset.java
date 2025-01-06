@@ -28,6 +28,7 @@ public class Subset {
 
   public void dfs(int[] nums, int index, List<List<Integer>> res, List<Integer> subset) {
     if (index == nums.length) {
+      // we hit the leaf node and add subset to result
       res.add(new ArrayList<>(subset));
       return;
     }
