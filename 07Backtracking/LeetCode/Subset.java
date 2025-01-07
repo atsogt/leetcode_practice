@@ -19,23 +19,25 @@ import java.util.List;
 
 public class Subset {
   public List<List<Integer>> subsets(int[] nums) {
-    List<List<Integer>> res = new ArrayList<>();
-    List<Integer> subset = new ArrayList<>();
+    List<List<Integer>> res = new ArrayList<>(); // Result list to store all subsets
+    List<Integer> subset = new ArrayList<>(); // Current subset being explored
 
-    dfs(nums, 0, res, subset);
+    dfs(nums, 0, res, subset); // Start DFS from the beginning of the array
     return res;
   }
 
   public void dfs(int[] nums, int index, List<List<Integer>> res, List<Integer> subset) {
+    // Base case: Reached the end of the array
     if (index == nums.length) {
-      // we hit the leaf node and add subset to result
-      res.add(new ArrayList<>(subset));
+      res.add(new ArrayList<>(subset)); // Add a copy of the current subset to the result
       return;
     }
 
+    // Include the current element in the subset
     subset.add(nums[index]);
     dfs(nums, index + 1, res, subset);
 
+    // Exclude the current element from the subset (backtracking)
     subset.remove(subset.size() - 1);
     dfs(nums, index + 1, res, subset);
   }
