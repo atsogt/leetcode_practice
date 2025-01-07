@@ -29,7 +29,7 @@ public class prob2 {
     // if left subtree invalid? traverse right subtree as we add and explore its
     // descendants
     if (leafPath(root.right, path)) {
-      return false;
+      return true;
     }
     // if both sides strike out, we remove the parent node and backtrack up!
     path.remove(path.size() - 1);
