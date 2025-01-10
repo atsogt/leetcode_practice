@@ -27,7 +27,7 @@ public class Subset2 {
     Arrays.sort(nums);
     List<List<Integer>> res = new ArrayList<>();
     List<Integer> sub = new ArrayList<>();
-    backtracking(0, nums, sub, res);
+    backtracking(0, nums, sub, res); // Backtrack: Remove the last added element
     return res;
   }
 
@@ -36,9 +36,12 @@ public class Subset2 {
       res.add(new ArrayList<>(sub));
       return;
     }
+    // decision to include
     sub.add(nums[i]);
     backtracking(i + 1, nums, sub, res);
     sub.remove(sub.size() - 1);
+    // decision not to include
+    // Skip duplicate elements to avoid duplicate subsets
     while (i + 1 < nums.length && nums[i] == nums[i + 1]) {
       i++;
     }
