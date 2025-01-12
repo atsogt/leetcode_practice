@@ -38,30 +38,33 @@ target = 5
 Output: []
  */
 
-public class CombinationSum {
+//Non optimal Backtracking
+public class Solution {
   List<List<Integer>> res;
 
   public List<List<Integer>> combinationSum(int[] nums, int target) {
-    res = new ArrayList<>();
-    Arrays.sort(nums);
-
-    dfs(0, new ArrayList<>(), 0, nums, target);
+    res = new ArrayList<List<Integer>>();
+    List<Integer> cur = new ArrayList();
+    backtrack(nums, target, cur, 0);
     return res;
   }
 
-  private void dfs(int i, List<Integer> cur, int total, int[] nums, int target) {
-    if (total == target) {
-      res.add(new ArrayList<>(cur));
+  public void backtrack(int[] nums, int target, List<Integer> cur, int i) {
+    if (target == 0) {
+      res.add(new ArrayList(cur));
+      return;
+    }
+    if (target < 0 || i >= nums.length) {
       return;
     }
 
-    for (int j = i; j < nums.length; j++) {
-      if (total + nums[j] > target) {
-        return;
-      }
-      cur.add(nums[j]);
-      dfs(j, cur, total + nums[j], nums, target);
-      cur.remove(cur.size() - 1);
-    }
+    cur.add(nums[i]);
+    // index stays the same if we were to traverse the tree using the same element
+    backtrack(nums, target - nums[i], cur, i);
+    // we use the same element but we don't add anymore
+    cur.remove(cur.size() - 1);
+    // we traverse to the sub tree where we don't use the element and move onto the
+    // next element
+    backtrack(nums, target, cur, i + 1);
   }
 }
