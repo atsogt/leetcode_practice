@@ -1,0 +1,20 @@
+Two types of heaps
+1. Min Heap
+2. Max Heap
+
+1. Structure Property
+A binary heap is a binary tree that is a complete binary tree, where every single level of the tree is filled completely, except possibly the lowest level nodes, which are filled contiguously from left to right.
+
+2. Order Property
+
+The order property for a min-heap is that all of the descendents should be greater than their ancestors. In other words, if we have a root with value y, every node in the right and the left sub-tree should have values greater than or equal to y. This is a recursive property, similar to binary search trees.
+
+In a max-heap, every node in the right and the left sub-tree is smaller than or equal to y.
+
+The reason why we start filling up our array from index 1 is because it helps us figure out the index at which a node's left child, right child, or the parent resides. Because binary heaps are complete binary trees, no space is required for pointers. Instead, a node's left child, right child and parent can be calculated using the following formulas, where i is the index of a given node.
+
+leftChild = 2*i
+
+rightChild = 2*i+1
+
+parent = i/2
