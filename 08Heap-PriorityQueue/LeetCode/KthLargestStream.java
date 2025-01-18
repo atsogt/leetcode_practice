@@ -20,6 +20,28 @@
 // kthLargest.add(7);   // return 5
 // kthLargest.add(8);   // return 6
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class KthLargestStream {
+  class KthLargest {
+    List<Integer> arr;
+    int K;
+
+    public KthLargest(int k, int[] nums) {
+      K = k;
+      arr = new ArrayList();
+      for (int i = 0; i < nums.length; i++) {
+        arr.add(nums[i]);
+      }
+    }
+
+    public int add(int val) {
+      arr.add(val);
+      Collections.sort(arr);
+      return arr.get(arr.size() - K);
+    }
+  }
 
 }
