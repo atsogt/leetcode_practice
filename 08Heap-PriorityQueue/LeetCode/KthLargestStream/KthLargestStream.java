@@ -1,3 +1,4 @@
+package KthLargestStream;
 // Design a class to find the kth largest integer in a stream of values, including duplicates. E.g. the 2nd largest from [1, 2, 3, 3] is 3. The stream is not necessarily sorted.
 
 // Implement the following methods:
