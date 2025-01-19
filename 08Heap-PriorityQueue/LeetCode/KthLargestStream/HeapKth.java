@@ -10,6 +10,8 @@ class HeapKth {
     this.minHeap = new PriorityQueue<>();
     for (int num : nums) {
       minHeap.offer(num);
+      // if size is within 3, we don't do anything
+      // if size goes OVER 3, we pop the smallest root val
       if (minHeap.size() > k) {
         minHeap.poll();
       }
@@ -17,9 +19,10 @@ class HeapKth {
   }
 
   public int add(int val) {
-      minHeap.offer(val);
-      if (minHeap.size() > k) {
-          minHeap.poll();
-      }
-      return minHeap.peek();
+    minHeap.offer(val);
+    if (minHeap.size() > k) {
+      minHeap.poll();
+    }
+    return minHeap.peek();
   }
+}
