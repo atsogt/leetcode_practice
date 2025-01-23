@@ -6,6 +6,9 @@ public class PQueue {
   public static void main(String[] args) {
     // Queue<Double> q = new LinkedList<>();
     Queue<Double> q = new PriorityQueue<>(Collections.reverseOrder());
+    // offer is add without throwing exception
+    // peek retrieves root/priority value
+    // poll removes without throwing exception
     q.offer(4.2);
     q.offer(2.2);
     q.offer(1.25);
